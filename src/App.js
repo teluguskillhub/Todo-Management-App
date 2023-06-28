@@ -10,10 +10,19 @@ const App = () => {
   }
   const submitHandler = e =>{
     e.preventDefault();
-    const newTodos = [...todos,task];
-    setTodos(newTodos);
-    setTask("");
+    // const newTodos = [...todos,task];
+    // setTodos(newTodos);
+    // setTask("");
+    // instaed of directly adding the todo check wheather the text is there or not and the code goes here
+    if(todo === "") {
+      alert("please enter a todo");
+    } else {
+      const newTodo = [...todos, todo];
+      setTodos(newTodo);
+      setTodo("");
+    } 
   }
+  
   const deleteHandler = (indexValue) =>{
     const newTodos = todos.filter((todo,index) => index !== indexValue);
     setTodos(newTodos);
